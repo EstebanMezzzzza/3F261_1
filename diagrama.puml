@@ -1,4 +1,4 @@
-@startuml
+@startuml 
 class Jugador
 class Plomero
 class Puntuacion
@@ -8,8 +8,10 @@ class Tortuga
 class Champiñon
 class Monstruo
 class Final
+class Juego
 class Nivel
 class Boss 
+class BossFinal
 class Musica
 class Tiempo
 class Paisaje
@@ -23,5 +25,52 @@ class Cielo
 class Bolita
 class Vida
 class ChampiñonVerde
-class 
+class Fantasma
+class CasaDelTerror 
+class Moneda
+class PlantaMordedora
+class Tubo 
+class NivelExtra
+Jugador --> Plomero
+Jugador *-- Puntuacion
+Jugador *-- Vida
+ChampiñonVerde --> Vida
+Nivel *-- Fondo 
+Nivel *-- Musica
+Nivel *-- Nubes 
+Nivel *-- Tubo
+Nivel*-- Tiempo
+Nivel *-- Bloque
+Jugador --o Bloque
+Bloque *-- PowerUp
+PowerUp --> Girasol
+PowerUp --> Champiñon
+PowerUp--> ChampiñonVerde
+Nivel *-- Enemigo
+Enemigo --> Tortuga
+Enemigo --> Monstruo
+Enemigo --> Fantasma
+Enemigo --> Boss
+Enemigo --> BossFinal
+Castillo --> Nivel 
+CasaDelTerror --> Nivel 
+Enemigo --> Daño
+Enemigo --> Pez
+Juego *-- Jugador
+Juego *-- Final
+Juego *-- NivelExtra
+NivelExtra --o Tubo
+Enemigo --> PlantaMordedora
+Nivel --> Moneda
+PowerUp --> Estrella
+Nivel --> Paisaje
+Nivel --> Nube
+Nivel --> Cielo
+Final *-- Castillo
+Final *-- BossFinal
+Jugador --o Bolita
+Enemigo *-- Vida
+NivelAgua --> Nivel
+NivelAgua --> Pez 
+PlantaMordedora --o Tubo
 @enduml
