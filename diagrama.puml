@@ -1,0 +1,27 @@
+@startuml
+class Jugador
+class Plomero
+class Puntuacion
+class PowerUp
+class Enemigo
+class Tortuga
+class Champiñon
+class Monstruo
+class Final
+class Nivel
+class Boss 
+class Musica
+class Tiempo
+class Paisaje
+class Daño
+class Estrella
+class Girasol
+class Pez
+class Bloque
+class Nube
+class Cielo
+class Bolita
+class Vida
+class ChampiñonVerde
+class 
+@enduml
