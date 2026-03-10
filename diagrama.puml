@@ -1,9 +1,16 @@
-@startuml 
-class Jugador
+@startuml SuperMario
+class Jugador{
+    - Puntaje puntaje
+    - Vida vida 
+    + Daño:Atacar(Bolita)
+    + Saltar()
+}
 class Plomero
 class Puntuacion
 class PowerUp
-class Enemigo
+class Enemigo{
+    + Daño:Atacar(Bolita)
+}
 class Tortuga
 class Champiñon
 class Monstruo
@@ -26,51 +33,54 @@ class Bolita
 class Vida
 class ChampiñonVerde
 class Fantasma
-class CasaDelTerror 
+class CasaTerror 
 class Moneda
 class PlantaMordedora
+class NivelAgua
+class Castillo
+class Fondo
 class Tubo 
 class NivelExtra
-Jugador --> Plomero
-Jugador *-- Puntuacion
-Jugador *-- Vida
-ChampiñonVerde --> Vida
-Nivel *-- Fondo 
-Nivel *-- Musica
-Nivel *-- Nubes 
-Nivel *-- Tubo
-Nivel*-- Tiempo
-Nivel *-- Bloque
-Jugador --o Bloque
-Bloque *-- PowerUp
-PowerUp --> Girasol
-PowerUp --> Champiñon
-PowerUp--> ChampiñonVerde
-Nivel *-- Enemigo
-Enemigo --> Tortuga
-Enemigo --> Monstruo
-Enemigo --> Fantasma
-Enemigo --> Boss
-Enemigo --> BossFinal
-Castillo --> Nivel 
-CasaDelTerror --> Nivel 
-Enemigo --> Daño
-Enemigo --> Pez
-Juego *-- Jugador
-Juego *-- Final
-Juego *-- NivelExtra
-NivelExtra --o Tubo
-Enemigo --> PlantaMordedora
-Nivel --> Moneda
-PowerUp --> Estrella
-Nivel --> Paisaje
-Nivel --> Nube
-Nivel --> Cielo
-Final *-- Castillo
-Final *-- BossFinal
-Jugador --o Bolita
-Enemigo *-- Vida
-NivelAgua --> Nivel
-NivelAgua --> Pez 
-PlantaMordedora --o Tubo
-@enduml
+Jugador --|> Plomero
+Jugador "1"*--"*" Puntuacion
+Jugador "1"*--"3" Vida
+ChampiñonVerde --|> Vida
+Nivel "1"*--"1" Fondo 
+Nivel "1"*--"1" Musica
+Nivel "1"*--"*" Nube 
+Nivel "1"*--"4" Tubo
+Nivel "1"*--"1" Tiempo
+Nivel "1"*--"*" Bloque
+Jugador "1"o--"*" Bloque
+Bloque "1"*--"1" PowerUp
+PowerUp --|> Girasol
+PowerUp --|> Champiñon
+PowerUp --|> ChampiñonVerde
+Nivel "1"*--"*" Enemigo
+Enemigo --|> Tortuga
+Enemigo --|> Monstruo
+Enemigo --|> Fantasma
+Enemigo --|> Boss
+Enemigo --|> BossFinal
+Castillo --|> Nivel 
+CasaTerror --|> Nivel 
+Enemigo --|> Daño
+Enemigo --|> Pez
+Juego "1"*-- "1"Jugador
+Juego "1"*-- "1"Final
+Juego "1"*-- "5"NivelExtra
+NivelExtra "1"o--"1" Tubo
+Enemigo --|> PlantaMordedora
+Nivel --|> Moneda
+PowerUp --|> Estrella
+Nivel --|> Paisaje
+Nivel --|> Nube
+Nivel --|> Cielo
+Final "1"*--"1" Castillo
+Final "1"*--"1" BossFinal
+Jugador "1"o--"*" Bolita
+Enemigo "1"*--"1" Vida
+NivelAgua --|> Nivel
+NivelAgua --|> Pez 
+PlantaMordedora "1"o--"1" Tubo
+@enduml 
